@@ -10,6 +10,12 @@ We wish to create a system, where users can post about coffees they have tasted 
 - Roast can be specified in a three tier system. (Ligth, Medium, Dark)
 - The name of the coffee and the description can be any text, obviously we'd like to keep them sensibly long.
 - The rating of the coffees should be on a scale of 1 to 10.
-## Mockup
+## Mockups
 As previously mentioned the UI/UX team is on vacation, our receptionist was tasked with throwing together a mockup of our vision,
 so that hopefully there are fewer misunderstandings. These can be seen below.
+
+![Alt text](/Mockups/AllPosts.png?raw=true "All Posts Page")
+![Alt text](/Mockups/AllUsers.png?raw=true "All Users Page")
+![Alt text](/Mockups/AddUser.png?raw=true "Add User Page")
+![Alt text](/Mockups/AddPost.png?raw=true "Add Post Page")
+![Alt text](/Mockups/EditUser.png?raw=true "Edit User Page")
