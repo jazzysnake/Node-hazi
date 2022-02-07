@@ -1,0 +1,23 @@
+{
+  "name": "node-hazi",
+  "version": "1.0.0",
+  "description": "*This will be a small webapp made with a MongoDB-Express-Node stack for learning purposes. This will be made for the course VITMAV42 - Server-side JavaScript.*",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazzysnake/Node-hazi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jazzysnake/Node-hazi/issues"
+  },
+  "homepage": "https://github.com/jazzysnake/Node-hazi#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "express": "^4.17.2"
+  }
+}

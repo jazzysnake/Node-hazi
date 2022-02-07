@@ -1,0 +1,26 @@
+/* * {
+    border: solid 1px red !important;
+} */
+
+.card-author {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-title-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 16px;
+}
+
+.page-header {
+    text-align:center;
+    padding-top: 76px;
+    padding-bottom: 16px;
+}
