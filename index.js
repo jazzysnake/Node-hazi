@@ -4,5 +4,5 @@ const app = express();
 app.use(express.static('static'));
 
 app.listen(3000, function() {
-    console.log('idkdsakjfdso');
+    console.log('server started on port:3000');
 });
