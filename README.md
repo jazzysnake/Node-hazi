@@ -20,3 +20,5 @@ so that hopefully there are fewer misunderstandings. These can be seen below.
 ![Alt text](./Mockups/AddUser.png?raw=true "Add User Page")
 ![Alt text](./Mockups/AddPost.png?raw=true "Add Post Page")
 ![Alt text](./Mockups/EditUser.png?raw=true "Edit User Page")
+![Alt text](./Mockups/Post.png?raw=true "Post Page")
+![Alt text](./Mockups/User.png?raw=true "User Page")
