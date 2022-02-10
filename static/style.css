@@ -20,3 +20,26 @@
     padding-top: 76px;
     padding-bottom: 16px;
 }
+
+a{
+    color: black;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.button-cluster{
+    display: block;
+    flex: 0 0 auto;
+}
+
+.form-control{
+    resize: none;
+}
+
+.disabled{
+    height: auto;
+    resize: none;
+    pointer-events: none;
+}
