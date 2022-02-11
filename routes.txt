@@ -1,0 +1,53 @@
+*This file is just for planning the routes.*
+Current static pages:
+                USER RELATED
+                    GET      -all-users.html    /user
+                        GetAllUsersMW
+                        RenderMW
+                    GET     delete              /delete/user/:id
+                        GetUserMW
+                        DeleteUserMW
+                    GET,POST -edit-user.html    /edit/user/:id
+                        GetUserMW
+                        SaveUserMW
+                        RenderMW
+                    GET,POST -add-user.html     /add/user
+                        SaveUserMW
+                        RenderMW
+                    GET user.html               /user/:id
+                        GetUserMW
+                        RenderMW
+                    GET     delete              /delete/user/:id 
+                        GetUserMW
+                        DeleteUserMW
+                POST RELATED
+                    GET -index.html             /
+                        GetAllPostsMW
+                        RenderMW
+                    GET     delete              /delete/post/:id
+                        GetPostMW
+                        DeletePostMW
+                    GET -post.html              /post/:id
+                        GetPostMW
+                        RenderMW
+                    GET     delete              /delete/post/:id
+                        GetPostMW
+                        DeletePostMW
+                    GET -add-post.html          /add/post
+                        RenderMW
+                    POST    submit              /new/post/:id
+                        SavePostMW
+
+Middlewares:
+            Common:
+                    RenderMW
+            Posts:
+                    SavePostMW
+                    DeletePostMW
+                    GetPostMW
+                    GetAllPostsMW
+            Users:
+                    GetUserMW
+                    SaveUserMW
+                    DeleteUserMW
+                    GetAllUsersMW
