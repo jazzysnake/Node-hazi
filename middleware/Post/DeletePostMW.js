@@ -7,7 +7,7 @@ module.exports = function (objectrepository) {
         if (typeof res.locals.post=== 'undefined') {
             return next();
         }
-
+        // TODO remove from db
         res.locals.post.remove(err => {
             if (err) {
                 return next(err);

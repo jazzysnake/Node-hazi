@@ -1,0 +1,35 @@
+<%-include('header')%>
+<%-include('navbar',{page:'/add-user'})%>
+      <div class="container">
+        <div class="row">
+            <div class="col">
+              </div>
+              <div class="col">
+                  <h1 class="page-header">Edit User</h1>
+              </div>
+              <div class="col">
+              </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="inputUserName1" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="inputUserName1" value="UserName">
+                      </div>
+                    <div class="mb-3">
+                      <label for="inputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="inputEmail1" value="baristaxyz@email.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bioTextarea" style="display: flex; padding-bottom: 10px;">Short Bio</label>
+                        <textarea class="form-control" placeholder="Textarea" id="bioTextarea" style="height: 100px">A short description of the user why they like coffee, what coffee they like, who they like or any other information the user feels relevant.</textarea>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+<%-include('header')%>

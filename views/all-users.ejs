@@ -1,0 +1,38 @@
+<%-include('header')%>
+<%-include('navbar',{page:'/user'})%>
+      <div class="container">
+        <div class="row">
+            <div class="col">
+              </div>
+              <div class="col">
+                  <h1 class="page-header">All Users</h1>
+              </div>
+              <div class="col">
+              </div>
+        </div>
+        <% users.forEach(function(user){ %>
+        <div class="row card-container">
+            <div class="card" style="width: 30rem;">
+                <div class="card-body">
+                    <div class ="card-title-row">
+                        <h5 class="card-title"><a href="/user/:<%=user._id%>"><%=user.username%></a></h5>
+                        <div>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='/edit/user/<%=user._id%>';">
+                                <span class="material-icons">
+                                    edit
+                                </span>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="window.location.href='/delete/user/<%=user._id%>';">
+                                <span class="material-icons">
+                                    delete
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted"><%=user.email%></h6>
+                    <p class="card-text"><%=user.bio%></p>
+                </div>
+            </div>
+        </div>
+        <% }); %> 
+<%-include('footer')%>

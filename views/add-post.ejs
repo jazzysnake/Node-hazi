@@ -1,0 +1,51 @@
+<%-include('header')%>
+<%-include('navbar',{page:'/add-post'})%>
+      <div class="container">
+        <div class="row">
+            <div class="col">
+              </div>
+              <div class="col">
+                  <h1 class="page-header">Add Post</h1>
+              </div>
+              <div class="col">
+              </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="inputUserName1" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="inputUserName1" name="username" placeholder="Placeholder">
+                      </div>
+                    <div class="mb-3">
+                      <label for="inputTitle" class="form-label">Title</label>
+                      <input type="text" class="form-control" id="inputTitle"name="title" placeholder="Placeholder">
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputDrinkType1" class="form-label">Drink Type</label>
+                      <input type="text" class="form-control" id="inputDrinkType1"name="drinkType" placeholder="Placeholder">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputRoastSelect" class="form-label">Roast</label>
+                        <select class="form-select" id="inputRoastSelect" name="roast">
+                            <option selected="Light">Light</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Dark">Dark</option>
+                          </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputRatingRange" class="form-label">Rating </label>
+                        <input type="range" class="form-range" min="0" max="10" id="inputRatingRange" name="rating">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputDescription" style="display: flex; padding-bottom: 10px;">Short Description</label>
+                        <textarea class="form-control" placeholder="Textarea" id="inputDescription" style="height: 100px" name="desc"></textarea>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+<%-include('footer')%>
