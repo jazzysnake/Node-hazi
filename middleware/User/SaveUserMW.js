@@ -6,18 +6,15 @@
  */
 module.exports = function (objectrepository) {
     return function (req, res, next) {
-        console.log('save called')
         if (
             typeof req.body.username==='undefined' ||
             typeof req.body._id==='undefined'    ||
             typeof req.body.email==='undefined'||
             typeof req.body.bio==='undefined'
             ) {
-                console.log('save called undef')
             return next();
         }
-        console.log('save called redir')
-        //TODO save to db
+        // TODO check if res.locals has user, if not create new, else save to db
         return res.redirect('/user');
     };
 };
