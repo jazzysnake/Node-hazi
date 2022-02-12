@@ -33,10 +33,9 @@ Current static pages:
                     GET     delete              /delete/post/:id
                         GetPostMW
                         DeletePostMW
-                    GET -add-post.html          /add/post
-                        RenderMW
-                    POST    submit              /new/post/:id
+                    GET,POST -add-post.html     /add/post
                         SavePostMW
+                        RenderMW
 
 Middlewares:
             Common:
