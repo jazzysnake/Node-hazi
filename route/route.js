@@ -7,7 +7,7 @@ const getAllPostsMw = require('../middleware/Post/GetAllPostsMW');
 const saveUserMw = require('../middleware/User/SaveUserMW');
 const deleteUserMw = require('../middleware/User/DeleteUserMW');
 const getUserMw = require('../middleware/User/GetUserMW');
-const getAllUsersMw = require('../middleware/User/GetAllUsersMW');
+const getAllUsersMw = require('../middleware/User/GetAllUsersMW.js');
 
 module.exports = function(app){
     const objectrepository = {};

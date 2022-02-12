@@ -3,6 +3,6 @@
  */
 module.exports = function (objectrepository,viewName) {
     return function (req, res, next) {
-        next();
+        res.render(viewName);
     };
 };
