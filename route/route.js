@@ -8,7 +8,6 @@ const saveUserMw = require('../middleware/User/SaveUserMW');
 const deleteUserMw = require('../middleware/User/DeleteUserMW');
 const getUserMw = require('../middleware/User/GetUserMW');
 const getAllUsersMw = require('../middleware/User/GetAllUsersMW');
-const RenderMW = require('../middleware/Common/RenderMW');
 
 module.exports = function(app){
     const objectrepository = {};
@@ -29,13 +28,13 @@ module.exports = function(app){
     // View a single Post
     app.get('/post/:postid',
             getPostMw(objectrepository),
-            RenderMW(objectrepository,'post'),
+            renderMW(objectrepository,'post'),
     );
     
     // Add a new Post
     app.use('/add/post',
             savePostMw(objectrepository),
-            RenderMW(objectrepository,'add-post'),
+            renderMW(objectrepository,'add-post'),
     );
 
     // User routes
@@ -54,18 +53,19 @@ module.exports = function(app){
     // View a single User
     app.get('/user/:userid',
             getUserMw(objectrepository),
-            RenderMW(objectrepository,'user'),
+            renderMW(objectrepository,'user'),
     );
 
     // Add a new User
     app.use('/add/user',
             saveUserMw(objectrepository),
-            RenderMW(objectrepository,'add-edit-user'),
+            renderMW(objectrepository,'add-edit-user'),
     );
 
-    // Edit an existing User
+    // Edit existing User
     app.use('/edit/user/:userid',
+            getUserMw(objectrepository),
             saveUserMw(objectrepository),
-            RenderMW(objectrepository,'add-edit-user'),
+            renderMW(objectrepository,'add-edit-user'),
     );
 }
