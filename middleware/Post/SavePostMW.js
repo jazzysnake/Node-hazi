@@ -29,8 +29,7 @@ module.exports = function (objectrepository) {
         res.locals.post.roast = req.body.roast;
         res.locals.post.rating = req.body.rating;
         res.locals.post._author = req.body.userid;
-        console.log(res.locals.post._author);
-
+    
         res.locals.post.save(err=>{
             if(err){
                 return next(err);
