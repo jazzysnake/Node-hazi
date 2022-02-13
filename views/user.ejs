@@ -17,12 +17,12 @@
                     <div class ="card-title-row">
                         <h3 class="card-title">Username: <%= user.username %></h3>
                         <div class="button-cluster">
-                            <button type="button" class="btn btn-primary" onclick="window.location.href='edit-user.html';">
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='/edit/user/<%= user._id %>';">
                                 <span class="material-icons">
                                     edit
                                 </span>
                             </button>
-                            <button type="button" class="btn btn-danger"onclick="window.location.href='all-users.html';">
+                            <button type="button" class="btn btn-danger" onclick="window.location.href='/delete/user/<%= user._id %>';">
                                 <span class="material-icons">
                                     delete
                                 </span>

@@ -15,20 +15,28 @@
             <div class="card" style="width: 30rem;">
                 <div class="card-body">
                     <div class ="card-title-row">
-                        <h5 class="card-title"><a href="/post/:<%= post._id%>">
+                        <h5 class="card-title"><a href="/post/<%= post._id%>">
                         <%= post.title %> 
                         </a></h5>
-                        <button type="button" class="btn btn-danger">
-                            <span class="material-icons">
-                                delete
-                            </span></button>
+                        <div class="button-cluster">
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='/edit/post/<%=post._id%>';">
+                                <span class="material-icons">
+                                    edit
+                                </span>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="window.location.href='/delete/post/<%=post._id%>';">
+                                <span class="material-icons">
+                                    delete
+                                </span>
+                            </button>
+                        </div>
                     </div>
                     <h6 class="card-subtitle mb-2 text-muted">
                         <%= (post.rating + ' | ' + post.drinktype + ' | ' + post.roast)%>
                     </h6>
                     <p class="card-text"><%= post.desc%></p>
                     <p class="card-author">
-                        <%= post.user.username%>
+                        <%= post._author.username%>
                     </p>
                 </div>
             </div>

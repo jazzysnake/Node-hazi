@@ -1,3 +1,4 @@
+const requireOption = require('../requireOption');
 /**
  * This Middleware is responsible for saving a user to the db. 
  * Using POST params it determines if this is an update or a 
@@ -5,6 +6,7 @@
  * Upon success it redirects to /user/:id.
  */
 module.exports = function (objectrepository) {
+    const UserModel = requireOption(objectrepository,'UserModel');
     return function (req, res, next) {
         if (
             typeof req.body.username==='undefined' ||
@@ -14,7 +16,17 @@ module.exports = function (objectrepository) {
             ) {
             return next();
         }
-        // TODO check if res.locals has user, if not create new, else save to db
+        if(typeof res.locals.user === 'undefined'){
+            res.locals.user = new UserModel(); 
+        }
+        res.locals.user.username = req.body.username;
+        res.locals.user.email = req.body.email;
+        res.locals.user.bio = req.body.bio;
+        res.locals.user.save(err=>{
+            if(err){
+                return next(err);
+            }
         return res.redirect('/user');
+        })
     };
 };

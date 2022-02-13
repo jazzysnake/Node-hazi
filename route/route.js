@@ -9,8 +9,15 @@ const deleteUserMw = require('../middleware/User/DeleteUserMW');
 const getUserMw = require('../middleware/User/GetUserMW');
 const getAllUsersMw = require('../middleware/User/GetAllUsersMW');
 
+const UserModel = require('../model/user');
+const PostModel = require('../model/post');
+const GetAllUsersMW = require('../middleware/User/GetAllUsersMW');
+
 module.exports = function(app){
-    const objectrepository = {};
+    const objectrepository = {
+        UserModel:UserModel,
+        PostModel:PostModel,
+    };
 
     // Post routes
     // List all Posts
@@ -33,8 +40,17 @@ module.exports = function(app){
     
     // Add a new Post
     app.use('/add/post',
+            getAllUsersMw(objectrepository),
             savePostMw(objectrepository),
-            renderMw(objectrepository,'add-post'),
+            renderMw(objectrepository,'add-edit-post'),
+    );
+
+    // Edit existing Post
+    app.use('/edit/post/:postid',
+            getPostMw(objectrepository),
+            getAllUsersMw(objectrepository),
+            savePostMw(objectrepository),
+            renderMw(objectrepository,'add-edit-post'),
     );
 
     // User routes

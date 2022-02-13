@@ -1,11 +1,11 @@
 <%-include('header')%>
-<%-include('navbar',{page:'/add-user'})%>
+<%-include('navbar',{page:typeof user==='undefined'?'/add-user':''})%>
       <div class="container">
         <div class="row">
             <div class="col">
               </div>
               <div class="col">
-                  <h1 class="page-header">Edit User</h1>
+                  <h1 class="page-header"><%=typeof user === 'undefined'?"Add User":"Edit User"%></h1>
               </div>
               <div class="col">
               </div>
@@ -14,17 +14,18 @@
         <div class="card">
             <div class="card-body">
                 <form method="post">
+                    <input type="text" class="form-control invisible" name="_id" valuel=<%=typeof user === 'undefined'?"":user._id%>>
                     <div class="mb-3">
                         <label for="inputUserName1" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="inputUserName1" value="UserName">
+                        <input type="text" class="form-control" id="inputUserName1" name="username" value=<%=typeof user === 'undefined'?"":user.username%>>
                       </div>
                     <div class="mb-3">
                       <label for="inputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="inputEmail1" value="baristaxyz@email.com">
+                      <input type="email" class="form-control" id="inputEmail1" name="email" value=<%=typeof user === 'undefined'?"":user.email%> >
                     </div>
                     <div class="mb-3">
                         <label for="bioTextarea" style="display: flex; padding-bottom: 10px;">Short Bio</label>
-                        <textarea class="form-control" placeholder="Textarea" id="bioTextarea" style="height: 100px">A short description of the user why they like coffee, what coffee they like, who they like or any other information the user feels relevant.</textarea>
+                        <textarea class="form-control" placeholder="Textarea" id="bioTextarea" style="height: 100px"name="bio"><%=typeof user === 'undefined'?"":user.bio%></textarea>
                     </div>
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-primary">Submit</button>
